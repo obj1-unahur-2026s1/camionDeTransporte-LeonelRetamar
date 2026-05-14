@@ -1,0 +1,24 @@
+
+import camion2.*
+import cosas2.*
+
+describe "Test de camion" {
+
+  method initialize(){
+    bumblebee.cambiarForma(robot)
+    arenaAGranel.peso(150)
+    bateria.cargarYDescargarMisiles()
+    ladrillos.cambiarCantidad(80)
+    embalaje.cambiarLoQueEnvuelve(ladrillos)
+    
+    camion.cargarCosa(bumblebee)
+    camion.cargarCosa(arenaAGranel)
+    camion.cargarCosa(bateria)
+    camion.cargarCosa(embalaje)
+  }
+
+  test "test peso" {
+    assert.equals(1000+300+800+140+160, camion.peso())
+  }
+
+}

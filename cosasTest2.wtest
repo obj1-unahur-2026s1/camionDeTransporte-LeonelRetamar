@@ -1,15 +1,18 @@
-import cosas.*
+import cosas2.*
+import camion2.*
+
 
 describe "Test de cosas" {
 
   method initialize(){
     residuos.peso(30)
     embalaje.cambiarLoQueEnvuelve(residuos)
-    contenedor.meterElementos([bumblebee,residuos,embalaje])
+    contenedor.meterElementos([bumblebee,embalaje,bateria])
+
   }
 
   test "test embalaje" {
-    assert.equals(30+30+800+100, contenedor.peso())
+    assert.equals(45+300+800+100, contenedor.peso())
   }
 
 }
